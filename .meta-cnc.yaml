@@ -8,20 +8,19 @@ extends:
 labels:
   service_type: aws_terraform
 
+# These variables will be presented to the operator in pan-cnc enabled tools
+# the values of which will be passed to terraform via cli options. The name
+# of these variables *must* match the variables defined in variables.tf
 variables:
-  - name: aws_access_key
+  - name: access_key
     description: AWS Access Key
     default: Place your Access Key
     type_hint: text
-  - name: aws_secret_key
+  - name: secret_key
     description: AWS Secret Key
     default:
     type_hint: password
-  - name: ServerKeyName
-    description: SSH Key Name
-    default: ssh_key_pair
-    type_hint: text
-  - name: aws_region
+  - name: region
     description: AWS Region
     default: us-east-2
     type_hint: text
