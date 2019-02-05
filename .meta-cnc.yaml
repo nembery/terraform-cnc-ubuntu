@@ -1,0 +1,27 @@
+name: aws-hello-world-ubuntu
+label: AWS Ubuntu Hello World
+description: Builds a single Ubuntu Server in AWS
+
+type: terraform
+extends:
+
+labels:
+  service_type: aws_terraform
+
+variables:
+  - name: aws_access_key
+    description: AWS Access Key
+    default: Place your Access Key
+    type_hint: text
+  - name: aws_secret_key
+    description: AWS Secret Key
+    default:
+    type_hint: password
+  - name: ServerKeyName
+    description: SSH Key Name
+    default: ssh_key_pair
+    type_hint: text
+  - name: aws_region
+    description: AWS Region
+    default: us-east-2
+    type_hint: text
